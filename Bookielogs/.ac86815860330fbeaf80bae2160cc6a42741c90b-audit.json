@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "/home/lewis/telegram/Bookielogs/.ac86815860330fbeaf80bae2160cc6a42741c90b-audit.json",
+    "files": [
+        {
+            "date": 1750340409646,
+            "name": "/home/lewis/telegram/Bookielogs/CriticalErrors-2025-06-19.log",
+            "hash": "e3bd4cebb7e10aac2561b3b569e6723f1d24521c302a01630fd39d3d0cbd89db"
+        }
+    ],
+    "hashType": "sha256"
+}

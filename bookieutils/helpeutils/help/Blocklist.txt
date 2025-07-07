@@ -1,0 +1,64 @@
+✦✧✦ BOOKIEBASHER ✦✧✦
+──────────⌘──────────
+
+➤ Blocklist Module Usage Guide
+----------------------------------
+
+**Overview:**
+→ The blocklist allows admins to define offensive words or phrases. If these are posted by non-admins in a group, they'll be automatically deleted. Admins can **lock** (add) or **unlock** (remove) phrases. All management commands must be invoked in private chat, after which the bot will ask which connected group to apply changes to. Blocked phrases are NOT saved per-message—they're checked in real time and deleted immediately.
+
+**Admin Setup (once, in private chat):**
+
+──────────⌘──────────
+
+➤ Commands (Admin-only, pm chat only)
+--------------------------------------------
+
+1) /lock **phrase1,phrase2,phrase3,…**
+
+ → • Used bot in group and pm to setup
+
+   • **Example**:
+    `/lock scam,scum,that not legit`
+
+ →in pm you'll be guided automatically 
+
+2) /unlock **phrase1,phrase2,…**
+
+   • **Purpose**:
+
+→   Remove one or more words/phrases from a group’s blocklist.
+ 
+
+
+3) /listlock
+
+  • **Purpose**:
+
+  →Show all blocked phrases currently defined for a group.
+  
+──────────⌘──────────
+
+➤ Block Behavior (any user)
+-----------------------------
+
+• **When any non-command message appears in the group, blocklist does**:
+ → 1) If the sender is an admin → do nothing (admin messages are exempt).
+→  2) Lowercase the message text and check if any blocked phrase is a substring.
+  →3) If a match is found, delete the message immediately (no warning).
+
+──────────⌘──────────
+
+➤ Notes
+---------
+
+→• Blocklists are stored permanently unless deleted
+
+→• Use short, exact phrases (no leading/trailing whitespace). The match is substring-based, so “scum” blocks “This is scum!” or “not a scum-bucket,” but not “scummy” unless you also lock “scummy.”
+
+→• Admins never have their messages deleted, even if they post a locked phrase.
+
+→• All changes (lock/unlock) happen in real time; no history is kept of past messages.
+
+✦✧✦ END ✦✧✦
+──────────⌘──────────

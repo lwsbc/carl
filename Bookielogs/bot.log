@@ -1,0 +1,208 @@
+{"level":30,"time":1751846143351,"pid":54394,"hostname":"vps-17c3c952","msg":"Configuration validated"}
+{"level":30,"time":1751846143497,"pid":54394,"hostname":"vps-17c3c952","msg":"Database initialized with normal durability"}
+{"level":30,"time":1751846143504,"pid":54394,"hostname":"vps-17c3c952","msg":"Schema upgraded to version 1"}
+{"level":30,"time":1751846143509,"pid":54394,"hostname":"vps-17c3c952","msg":"Database backup created at /home/ubuntu/lwsbc/telegram/res/data/database-2025-07-06.bak"}
+{"level":30,"time":1751846143509,"pid":54394,"hostname":"vps-17c3c952","msg":"Database ready at /home/ubuntu/lwsbc/telegram/res/data/database.db"}
+{"level":30,"time":1751846143511,"pid":54394,"hostname":"vps-17c3c952","msg":"🤖 Bot instance created"}
+{"level":30,"time":1751846143511,"pid":54394,"hostname":"vps-17c3c952","msg":"🔄 Syncing modules…"}
+{"level":30,"time":1751846143514,"pid":54394,"hostname":"vps-17c3c952","msg":"🔒 Global bot listeners attached"}
+{"level":30,"time":1751846143636,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Antilink v1.4.2"}
+{"level":30,"time":1751846143636,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 1 msg, 0 cb"}
+{"level":30,"time":1751846143717,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Antimention v1.0.0"}
+{"level":30,"time":1751846143717,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 2 msg, 1 cb"}
+{"level":30,"time":1751846143770,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Antipoll v2.1.0"}
+{"level":30,"time":1751846143770,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 3 msg, 2 cb"}
+{"level":30,"time":1751846143781,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Antispoiler v2.0.0"}
+{"level":30,"time":1751846143781,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 4 msg, 3 cb"}
+{"level":30,"time":1751846143835,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ ActiveMembers v3.3.1 initialized."}
+{"level":30,"time":1751846143836,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded ActiveMembers v3.3.1"}
+{"level":30,"time":1751846143836,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 5 msg, 4 cb"}
+{"level":30,"time":1751846143847,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Anticontact v2.1.1"}
+{"level":30,"time":1751846143847,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 6 msg, 5 cb"}
+{"level":30,"time":1751846143852,"pid":54394,"hostname":"vps-17c3c952","msg":"Initializing Blocker"}
+{"level":50,"time":1751846143854,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: ❌ Failed to load Help: Cannot find module '/home/ubuntu/lwsbc/telegram/bookies/bookieutils/helpeutils/fonthelp.js' imported from /home/ubuntu/lwsbc/telegram/bookies/sub/Help.js\nError [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/lwsbc/telegram/bookies/bookieutils/helpeutils/fonthelp.js' imported from /home/ubuntu/lwsbc/telegram/bookies/sub/Help.js\n    at finalizeResolution (node:internal/modules/esm/resolve:275:11)\n    at moduleResolve (node:internal/modules/esm/resolve:860:10)\n    at defaultResolve (node:internal/modules/esm/resolve:984:11)\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)\n    at ModuleJob._link (node:internal/modules/esm/module_job:175:49)"}
+{"level":30,"time":1751846143855,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 0 msg, 0 cb"}
+{"level":30,"time":1751846143855,"pid":54394,"hostname":"vps-17c3c952","msg":"PlainIdResponder initialized"}
+{"level":30,"time":1751846143856,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: ✅ Loaded PlainIdResponder v1.0.0"}
+{"level":30,"time":1751846143856,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 1 msg, 0 cb"}
+{"level":30,"time":1751846143859,"pid":54394,"hostname":"vps-17c3c952","msg":"Initializing Connection module"}
+{"level":30,"time":1751846143859,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Connection v1.1.1"}
+{"level":30,"time":1751846143859,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 7 msg, 6 cb"}
+{"level":30,"time":1751846143865,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Blocker v1.3.0"}
+{"level":30,"time":1751846143865,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 8 msg, 7 cb"}
+{"level":30,"time":1751846143868,"pid":54394,"hostname":"vps-17c3c952","msg":"Clean Module"}
+{"level":30,"time":1751846143868,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Clean Module v1.0.1"}
+{"level":30,"time":1751846143868,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 9 msg, 7 cb"}
+{"level":30,"time":1751846143869,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Anticontact v2.0.8"}
+{"level":30,"time":1751846143869,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 10 msg, 8 cb"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"Start Message initialized"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: ✅ Loaded Start Message v2.0.1"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 2 msg, 1 cb"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 📦 Modules loaded → 2 succeeded, 1 failed"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 👀 Watching /home/ubuntu/lwsbc/telegram/bookies/sub for changes"}
+{"level":30,"time":1751846143875,"pid":54394,"hostname":"vps-17c3c952","msg":"AuxLoader: 🚀 Initialized"}
+{"level":30,"time":1751846143876,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded AuxLoader v2.0.1"}
+{"level":30,"time":1751846143876,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 11 msg, 9 cb"}
+{"level":30,"time":1751846143883,"pid":54394,"hostname":"vps-17c3c952","msg":"AntiCustomEmoji initialized"}
+{"level":30,"time":1751846143883,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded AntiCustomEmoji v1.0.0"}
+{"level":30,"time":1751846143883,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 12 msg, 9 cb"}
+{"level":30,"time":1751846143885,"pid":54394,"hostname":"vps-17c3c952","msg":"Initializing Font Manager"}
+{"level":30,"time":1751846143885,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Font Manager v1.0.2"}
+{"level":30,"time":1751846143885,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 13 msg, 10 cb"}
+{"level":30,"time":1751846143885,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded AntiExternalReply v2.0.0"}
+{"level":30,"time":1751846143885,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 14 msg, 10 cb"}
+{"level":30,"time":1751846143892,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Getfilter v1.0.0 initialized."}
+{"level":30,"time":1751846143892,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Getfilter v1.0.0"}
+{"level":30,"time":1751846143892,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 15 msg, 10 cb"}
+{"level":30,"time":1751846143892,"pid":54394,"hostname":"vps-17c3c952","msg":"Database initialized."}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"Loaded 0 chat configs."}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"Initializing Health Module..."}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Health v2.1.0"}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 16 msg, 11 cb"}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"Help module initialized."}
+{"level":30,"time":1751846143902,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Help v1.0.0"}
+{"level":30,"time":1751846143903,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 17 msg, 12 cb"}
+{"level":30,"time":1751846143903,"pid":54394,"hostname":"vps-17c3c952","msg":"Ping Module"}
+{"level":30,"time":1751846143903,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Ping Module v3.2.1"}
+{"level":30,"time":1751846143903,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 18 msg, 12 cb"}
+{"level":30,"time":1751846143908,"pid":54394,"hostname":"vps-17c3c952","msg":"Loaded 0 indexes."}
+{"level":30,"time":1751846143908,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Filter v2.2.0 initialized."}
+{"level":30,"time":1751846143908,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Filter v2.2.0"}
+{"level":30,"time":1751846143909,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 19 msg, 13 cb"}
+{"level":30,"time":1751846143912,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded PromoteDemote v1.2.0"}
+{"level":30,"time":1751846143912,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 20 msg, 13 cb"}
+{"level":30,"time":1751846143918,"pid":54394,"hostname":"vps-17c3c952","msg":"Bot API handle captured."}
+{"level":30,"time":1751846143925,"pid":54394,"hostname":"vps-17c3c952","msg":"Service Clean v1.1.0 initialized"}
+{"level":30,"time":1751846143925,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Service Clean v1.1.0"}
+{"level":30,"time":1751846143925,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 21 msg, 13 cb"}
+{"level":30,"time":1751846143928,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Antibot v2.1.0"}
+{"level":30,"time":1751846143928,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 22 msg, 13 cb"}
+{"level":30,"time":1751846143928,"pid":54394,"hostname":"vps-17c3c952","msg":"Database initialized successfully."}
+{"level":30,"time":1751846143940,"pid":54394,"hostname":"vps-17c3c952","msg":"Loaded 0 schedules from the database."}
+{"level":30,"time":1751846143940,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Scheduler initialized and started successfully."}
+{"level":30,"time":1751846143940,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Scheduler v9.3.0"}
+{"level":30,"time":1751846143940,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 23 msg, 14 cb"}
+{"level":30,"time":1751846143940,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded 0 welcome configurations"}
+{"level":30,"time":1751846143941,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Welcome module v8.0.1 initialized"}
+{"level":30,"time":1751846143941,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Loaded Welcome v8.0.1"}
+{"level":30,"time":1751846143941,"pid":54394,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 24 msg, 15 cb"}
+{"level":30,"time":1751846143941,"pid":54394,"hostname":"vps-17c3c952","msg":"📦 Modules loaded → 24 succeeded, 0 failed"}
+{"level":30,"time":1751846143946,"pid":54394,"hostname":"vps-17c3c952","msg":"🚀 Module loader ready"}
+{"level":30,"time":1751846143947,"pid":54394,"hostname":"vps-17c3c952","msg":"📊 Rate limiting applied"}
+{"level":30,"time":1751846143948,"pid":54394,"hostname":"vps-17c3c952","msg":"🔐 Generating self-signed cert for CN=51.195.221.170"}
+{"level":40,"time":1751846144294,"pid":54394,"hostname":"vps-17c3c952","msg":"Port 88 busy: listen EACCES: permission denied 0.0.0.0:88"}
+{"level":40,"time":1751846144296,"pid":54394,"hostname":"vps-17c3c952","msg":"Port 80 busy: listen EACCES: permission denied 0.0.0.0:80"}
+{"level":30,"time":1751846144297,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Listening on port 8443"}
+{"level":30,"time":1751846144466,"pid":54394,"hostname":"vps-17c3c952","msg":"🪝 Webhook registered with Telegram"}
+{"level":30,"time":1751846144466,"pid":54394,"hostname":"vps-17c3c952","msg":"🎉 Bot is live!"}
+{"level":30,"time":1751846160003,"pid":54394,"hostname":"vps-17c3c952","msg":"✅ Scheduler started and aligned to full minute ticks."}
+{"level":30,"time":1751846160464,"pid":54394,"hostname":"vps-17c3c952","msg":"Ping Module"}
+{"level":30,"time":1751846168877,"pid":54394,"hostname":"vps-17c3c952","msg":"Ping Module"}
+{"level":30,"time":1751846176013,"pid":54394,"hostname":"vps-17c3c952","msg":"SIGINT received - closing database"}
+{"level":30,"time":1751846176015,"pid":54394,"hostname":"vps-17c3c952","msg":"Saved activity for 0 chats"}
+{"level":30,"time":1751846176016,"pid":54394,"hostname":"vps-17c3c952","msg":"Saving before shutdown..."}
+{"level":30,"time":1751846176016,"pid":54394,"hostname":"vps-17c3c952","msg":"Saving filters..."}
+{"level":30,"time":1751846176016,"pid":54394,"hostname":"vps-17c3c952","msg":"Saving indexes..."}
+{"level":30,"time":1751846176016,"pid":54394,"hostname":"vps-17c3c952","msg":"🛑 Shutting down…"}
+{"level":30,"time":1751846213631,"pid":54469,"hostname":"vps-17c3c952","msg":"Configuration validated"}
+{"level":30,"time":1751846213760,"pid":54469,"hostname":"vps-17c3c952","msg":"Database initialized with normal durability"}
+{"level":30,"time":1751846213767,"pid":54469,"hostname":"vps-17c3c952","msg":"Database backup created at /home/ubuntu/lwsbc/telegram/res/data/database-2025-07-06.bak"}
+{"level":30,"time":1751846213767,"pid":54469,"hostname":"vps-17c3c952","msg":"Database ready at /home/ubuntu/lwsbc/telegram/res/data/database.db"}
+{"level":30,"time":1751846213768,"pid":54469,"hostname":"vps-17c3c952","msg":"🤖 Bot instance created"}
+{"level":30,"time":1751846213769,"pid":54469,"hostname":"vps-17c3c952","msg":"🔄 Syncing modules…"}
+{"level":30,"time":1751846213772,"pid":54469,"hostname":"vps-17c3c952","msg":"🔒 Global bot listeners attached"}
+{"level":30,"time":1751846213929,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Antilink v1.4.2"}
+{"level":30,"time":1751846213929,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 1 msg, 0 cb"}
+{"level":30,"time":1751846213984,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Antimention v1.0.0"}
+{"level":30,"time":1751846213984,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 2 msg, 1 cb"}
+{"level":30,"time":1751846214031,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Antipoll v2.1.0"}
+{"level":30,"time":1751846214031,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 3 msg, 2 cb"}
+{"level":30,"time":1751846214039,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Antispoiler v2.0.0"}
+{"level":30,"time":1751846214039,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 4 msg, 3 cb"}
+{"level":30,"time":1751846214096,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ ActiveMembers v3.3.1 initialized."}
+{"level":30,"time":1751846214096,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded ActiveMembers v3.3.1"}
+{"level":30,"time":1751846214097,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 5 msg, 4 cb"}
+{"level":30,"time":1751846214112,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Anticontact v2.1.1"}
+{"level":30,"time":1751846214113,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 6 msg, 5 cb"}
+{"level":30,"time":1751846214116,"pid":54469,"hostname":"vps-17c3c952","msg":"Initializing Blocker"}
+{"level":50,"time":1751846214119,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: ❌ Failed to load Help: Cannot find module '/home/ubuntu/lwsbc/telegram/bookies/bookieutils/helpeutils/fonthelp.js' imported from /home/ubuntu/lwsbc/telegram/bookies/sub/Help.js\nError [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/lwsbc/telegram/bookies/bookieutils/helpeutils/fonthelp.js' imported from /home/ubuntu/lwsbc/telegram/bookies/sub/Help.js\n    at finalizeResolution (node:internal/modules/esm/resolve:275:11)\n    at moduleResolve (node:internal/modules/esm/resolve:860:10)\n    at defaultResolve (node:internal/modules/esm/resolve:984:11)\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)\n    at ModuleJob._link (node:internal/modules/esm/module_job:175:49)"}
+{"level":30,"time":1751846214120,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 0 msg, 0 cb"}
+{"level":30,"time":1751846214123,"pid":54469,"hostname":"vps-17c3c952","msg":"PlainIdResponder initialized"}
+{"level":30,"time":1751846214123,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: ✅ Loaded PlainIdResponder v1.0.0"}
+{"level":30,"time":1751846214123,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 1 msg, 0 cb"}
+{"level":30,"time":1751846214128,"pid":54469,"hostname":"vps-17c3c952","msg":"Initializing Connection module"}
+{"level":30,"time":1751846214128,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Connection v1.1.1"}
+{"level":30,"time":1751846214128,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 7 msg, 6 cb"}
+{"level":30,"time":1751846214134,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Blocker v1.3.0"}
+{"level":30,"time":1751846214134,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 8 msg, 7 cb"}
+{"level":30,"time":1751846214138,"pid":54469,"hostname":"vps-17c3c952","msg":"Clean Module"}
+{"level":30,"time":1751846214138,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Clean Module v1.0.1"}
+{"level":30,"time":1751846214138,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 9 msg, 7 cb"}
+{"level":30,"time":1751846214139,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Anticontact v2.0.8"}
+{"level":30,"time":1751846214139,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 10 msg, 8 cb"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"Start Message initialized"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: ✅ Loaded Start Message v2.0.1"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 🔧 Handlers updated - 2 msg, 1 cb"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 📦 Modules loaded → 2 succeeded, 1 failed"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 👀 Watching /home/ubuntu/lwsbc/telegram/bookies/sub for changes"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"AuxLoader: 🚀 Initialized"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded AuxLoader v2.0.1"}
+{"level":30,"time":1751846214143,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 11 msg, 9 cb"}
+{"level":30,"time":1751846214148,"pid":54469,"hostname":"vps-17c3c952","msg":"AntiCustomEmoji initialized"}
+{"level":30,"time":1751846214148,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded AntiCustomEmoji v1.0.0"}
+{"level":30,"time":1751846214148,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 12 msg, 9 cb"}
+{"level":30,"time":1751846214151,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded AntiExternalReply v2.0.0"}
+{"level":30,"time":1751846214151,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 13 msg, 9 cb"}
+{"level":30,"time":1751846214158,"pid":54469,"hostname":"vps-17c3c952","msg":"Initializing Font Manager"}
+{"level":30,"time":1751846214158,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Font Manager v1.0.2"}
+{"level":30,"time":1751846214158,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 14 msg, 10 cb"}
+{"level":30,"time":1751846214162,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Getfilter v1.0.0 initialized."}
+{"level":30,"time":1751846214162,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Getfilter v1.0.0"}
+{"level":30,"time":1751846214163,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 15 msg, 10 cb"}
+{"level":30,"time":1751846214172,"pid":54469,"hostname":"vps-17c3c952","msg":"Database initialized."}
+{"level":30,"time":1751846214174,"pid":54469,"hostname":"vps-17c3c952","msg":"Initializing Health Module..."}
+{"level":30,"time":1751846214174,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Health v2.1.0"}
+{"level":30,"time":1751846214174,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 16 msg, 11 cb"}
+{"level":30,"time":1751846214177,"pid":54469,"hostname":"vps-17c3c952","msg":"Help module initialized."}
+{"level":30,"time":1751846214177,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Help v1.0.0"}
+{"level":30,"time":1751846214177,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 17 msg, 12 cb"}
+{"level":30,"time":1751846214178,"pid":54469,"hostname":"vps-17c3c952","msg":"Loaded 0 chat configs."}
+{"level":30,"time":1751846214179,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded PromoteDemote v1.2.0"}
+{"level":30,"time":1751846214179,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 18 msg, 12 cb"}
+{"level":30,"time":1751846214179,"pid":54469,"hostname":"vps-17c3c952","msg":"Ping Module"}
+{"level":30,"time":1751846214179,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Ping Module v3.2.1"}
+{"level":30,"time":1751846214179,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 19 msg, 12 cb"}
+{"level":30,"time":1751846214184,"pid":54469,"hostname":"vps-17c3c952","msg":"Loaded 0 indexes."}
+{"level":30,"time":1751846214184,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Filter v2.2.0 initialized."}
+{"level":30,"time":1751846214184,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Filter v2.2.0"}
+{"level":30,"time":1751846214184,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 20 msg, 13 cb"}
+{"level":30,"time":1751846214192,"pid":54469,"hostname":"vps-17c3c952","msg":"Bot API handle captured."}
+{"level":30,"time":1751846214194,"pid":54469,"hostname":"vps-17c3c952","msg":"Service Clean v1.1.0 initialized"}
+{"level":30,"time":1751846214194,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Service Clean v1.1.0"}
+{"level":30,"time":1751846214194,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 21 msg, 13 cb"}
+{"level":30,"time":1751846214195,"pid":54469,"hostname":"vps-17c3c952","msg":"Database initialized successfully."}
+{"level":30,"time":1751846214201,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Antibot v2.1.0"}
+{"level":30,"time":1751846214201,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 22 msg, 13 cb"}
+{"level":30,"time":1751846214211,"pid":54469,"hostname":"vps-17c3c952","msg":"Loaded 0 schedules from the database."}
+{"level":30,"time":1751846214211,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Scheduler initialized and started successfully."}
+{"level":30,"time":1751846214211,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Scheduler v9.3.0"}
+{"level":30,"time":1751846214211,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 23 msg, 14 cb"}
+{"level":30,"time":1751846214212,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded 0 welcome configurations"}
+{"level":30,"time":1751846214213,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Welcome module v8.0.1 initialized"}
+{"level":30,"time":1751846214213,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Loaded Welcome v8.0.1"}
+{"level":30,"time":1751846214213,"pid":54469,"hostname":"vps-17c3c952","msg":"🔧 Handlers updated: 24 msg, 15 cb"}
+{"level":30,"time":1751846214213,"pid":54469,"hostname":"vps-17c3c952","msg":"📦 Modules loaded → 24 succeeded, 0 failed"}
+{"level":30,"time":1751846214221,"pid":54469,"hostname":"vps-17c3c952","msg":"🚀 Module loader ready"}
+{"level":30,"time":1751846214221,"pid":54469,"hostname":"vps-17c3c952","msg":"📊 Rate limiting applied"}
+{"level":30,"time":1751846214223,"pid":54469,"hostname":"vps-17c3c952","msg":"🔐 Generating self-signed cert for CN=51.195.221.170"}
+{"level":40,"time":1751846215465,"pid":54469,"hostname":"vps-17c3c952","msg":"Port 88 busy: listen EACCES: permission denied 0.0.0.0:88"}
+{"level":40,"time":1751846215467,"pid":54469,"hostname":"vps-17c3c952","msg":"Port 80 busy: listen EACCES: permission denied 0.0.0.0:80"}
+{"level":30,"time":1751846215467,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Listening on port 8443"}
+{"level":30,"time":1751846215657,"pid":54469,"hostname":"vps-17c3c952","msg":"🪝 Webhook registered with Telegram"}
+{"level":30,"time":1751846215657,"pid":54469,"hostname":"vps-17c3c952","msg":"🎉 Bot is live!"}
+{"level":30,"time":1751846220003,"pid":54469,"hostname":"vps-17c3c952","msg":"✅ Scheduler started and aligned to full minute ticks."}
+{"level":30,"time":1751849814184,"pid":54469,"hostname":"vps-17c3c952","msg":"Pruned expired pending actions."}
+{"level":30,"time":1751853414186,"pid":54469,"hostname":"vps-17c3c952","msg":"Pruned expired pending actions."}
+{"level":30,"time":1751857014186,"pid":54469,"hostname":"vps-17c3c952","msg":"Pruned expired pending actions."}
+{"level":30,"time":1751860614185,"pid":54469,"hostname":"vps-17c3c952","msg":"Pruned expired pending actions."}
+{"level":30,"time":1751864214186,"pid":54469,"hostname":"vps-17c3c952","msg":"Pruned expired pending actions."}

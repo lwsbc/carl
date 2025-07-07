@@ -1,0 +1,112 @@
+✦✧✦ BOOKIEBASHER ✦✧✦
+──────────⌘──────────
+
+➤ Resources Module Usage Guide
+----------------------------------
+
+**Overview:**
+→ The Resources module lets admins load text files (one per topic) and browse them page by page via inline-keyboards. All help files in `bookieutils/helpeutils/help/*.txt` are hot-reloaded when changed.
+
+**Admin Setup (once, in private chat):**
+──────────⌘──────────
+
+➤ Commands (Admin-only, private chat)
+--------------------------------------
+
+1) /help
+  → Opens the main menu of available resource files.  
+  → Displays page 1 of the first resource.
+
+2) /popupon
+  → Enables “always on top” mode: after /help the menu is re-posted on top whenever you send any other message.  
+
+3) /popupoff
+  → Disables “always on top” mode and deletes the floating menu.
+
+──────────⌘──────────
+
+➤ Navigation (via inline buttons)
+-----------------------------------
+
+• **Close Menu**  
+  → Closes the menu entirely.
+
+• **⬅️ Back / Next ➡️**  
+  → Move to previous or next page of the current file.
+
+• **🏠 Main Menu**  
+  → Return to the list of all resource files.
+
+──────────⌘──────────
+
+➤ Notes
+---------
+
+→ Resources are split on `──────────⌘──────────` markers in the .txt files.  
+→ Pages longer than ~770 characters are auto-chunked.  
+→ Fonts: bold/italic, script, bold sans-serif, small caps, etc., applied automatically.  
+→ Hot-reload: editing or adding `.txt` under the help folder updates the menu within ~200 ms.
+
+──────────⌘──────────
+
+
+✦✧✦ BOOKIEBASHER ✦✧✦
+──────────⌘──────────
+
+➤ Menu Module Usage Guide
+----------------------------------
+
+**Overview:**
+→ The Menu module lets admins build a custom `/menu` of commands and descriptions, stored in the bot’s SQLite database. Pages are auto-paginated with inline-keyboard nav.
+
+**Admin Setup (once, in private chat):**
+──────────⌘──────────
+
+➤ Commands (Admin-only, private chat)
+--------------------------------------
+
+1) /menu  
+  → Opens the custom menu and shows page 1.
+
+2) /addmenu cmd1 cmd2 …  
+  → Adds or updates one or more menu entries.  
+  → Follow on new lines with `!description text` to set each entry’s description.  
+  → Example:  
+    /addmenu start help  
+    !Shows bot startup info  
+    !Shows available commands  
+
+3) /delmenu cmd1 cmd2 …  
+  → Deletes one or more entries from the menu.
+
+4) /alwaysontopon  
+  → Enables “always on top”: menu re-posts itself after any other message.
+
+5) /alwaysontopoff  
+  → Disables always-on-top and deletes the floating menu.
+
+──────────⌘──────────
+
+➤ Navigation (via inline buttons)
+-----------------------------------
+
+• **Close Menu / Open Menu**  
+  → Toggles menu visibility.
+
+• **⬅️ Back / Next ➡️**  
+  → Page navigation.
+
+──────────⌘──────────
+
+➤ Notes
+---------
+
+→ All data is persisted in the `menus` table of your bot’s SQLite DB.  
+→ Descriptions support **boldItalic** and double-struck ﹡fonts﹡.  
+→ Page size capped at ~770 characters.  
+→ Inline buttons auto-update the same message when possible.  
+
+──────────⌘──────────
+
+✦✧✦ END OF GUIDE ✦✧✦
+──────────⌘──────────

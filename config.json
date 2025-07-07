@@ -1,0 +1,51 @@
+{
+  "ADMINS": [6100018103, 496754576],
+  "LOG_STACK": true,
+  "UFW_PORTS": [88, 80, 8443, 443],
+  "RATE_LIMIT": [
+    { "timeFrame": 1000, "limit": 30 },
+    { "timeFrame": 1000, "limit": 1 },
+    { "timeFrame": 1000, "limit": 3 }
+  ],
+  "TIMEZONE": "Africa/Nairobi",
+  "LOG_LEVEL": "debug",
+  "DB_PATH": "./res/data",
+
+  "ANTILINK": {
+    "ENABLED_BY_DEFAULT": true,
+    "WARNING_MESSAGE": "🚫 Links aren’t allowed!",
+    "EXPRESSIONS": [
+      "The group feels lighter now!",
+      "No more links, please!",
+      "Link muted—carry on!"
+    ],
+    "WARNING_TTL_MS": 300000,
+    "EXPRESSION_TTL_MS": 5000,
+    "DELETE_RETRY_DELAY_MS": 2000,
+    "DELETION_QUEUE_INTERVAL_MS": 5000,
+    "MAX_DELETE_ATTEMPTS": 5,
+    "MUTE_DURATION_MS": 0
+  },
+
+  "BLOCKER": {
+    "MAX_MSG_CHARS": 4090,
+    "SAVE_DELAY_MS": 5000
+  },
+
+  "ANTICONTACT": {
+    "GMAIL_ENABLED": true,
+    "CONTACT_ENABLED": true,
+    "WARNING_PREFIX": "⚠️To protect our members from fraudulent activities like scams, advertising is strictly prohibited on this platform. (",
+    "WARNING_SUFFIX": " next time you'll be muted)",
+    "INFRACTION_THRESHOLD": 2,
+    "INFRACTION_EXPIRY_MS": 3600000,
+    "WARNING_TTL_MS": 300000,
+    "QUEUE_COOLDOWN_MS": 3000
+  },
+
+  "ANTIPOLL": {
+    "SEND_WARNING": true,
+    "WARNING_TEXT": "⚠️ Polls are not allowed in this group.",
+    "WARNING_TTL_MS": 5000
+  }
+}

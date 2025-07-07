@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "/root/lwsbc/telegram/Bookielogs/.cb987ae24f01ca80353c30afd571eb10dfa09496-audit.json",
+    "files": [
+        {
+            "date": 1750341778023,
+            "name": "/root/lwsbc/telegram/Bookielogs/CriticalErrors-2025-06-19.log",
+            "hash": "a30169674d69c4f4bb6ab41777b58e0ad701b28a7f5915acc00558dd74a535f4"
+        },
+        {
+            "date": 1750402925964,
+            "name": "/root/lwsbc/telegram/Bookielogs/CriticalErrors-2025-06-20.log",
+            "hash": "a9b451fa19eb1b1619199ec8550795594ca3d68acdd143c0b0b76473337ebdfd"
+        }
+    ],
+    "hashType": "sha256"
+}
