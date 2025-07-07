@@ -1,0 +1,308 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------------------------------
+# The Legendary Setup Script (v5)
+# Description: A refined, interactive, and secure script to configure a Node.js
+# application, validate secrets with enhanced security, manage dependencies,
+# and launch with PM2.
+# -----------------------------------------------------------------------------
+
+# ─── SCRIPT CONFIGURATION ───────────────────────────────────────────────────
+set -e # Exit on error
+set -u # Exit on unset variable
+set -o pipefail # Exit on pipe failure
+IFS=$'\n\t' # Set field separator
+
+# --- Globals & Colors ---
+BOLD=$(tput bold)
+BLUE=$(tput setaf 4)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+RED=$(tput setaf 1)
+CYAN=$(tput setaf 6)
+NC=$(tput sgr0) # No Color
+
+# --- Script Info ---
+WORKDIR="$PWD"
+PM2_APP_NAME="Tg"
+TMPJSON="" # Temp file for depcheck output
+
+# ─── UTILITY FUNCTIONS ──────────────────────────────────────────────────────
+
+step() { echo -e "\n${CYAN}==>${NC}${BOLD} $1${NC}"; }
+log() { echo -e "${GREEN}  ✔${NC} $1"; }
+info() { echo -e "${BLUE}  …${NC} $1"; }
+warn() { echo -e "${YELLOW}  ⚠${NC} $1"; }
+fail() { echo -e "\n${RED}  ✖ FATAL:${NC} $1" >&2; exit 1; }
+
+# --- Cleanup Trap ---
+# This function runs when the script exits, ensuring temp files are removed.
+cleanup() {
+  trap - SIGINT SIGTERM ERR EXIT
+  if [[ -n "$TMPJSON" && -f "$TMPJSON" ]]; then
+    rm -f "$TMPJSON";
+  fi
+}
+trap cleanup SIGINT SIGTERM ERR EXIT
+
+
+# ─── CORE LOGIC ─────────────────────────────────────────────────────────────
+
+check_not_root() {
+    if [[ "$EUID" -eq 0 ]]; then
+        fail "This script should not be run as root. It uses 'sudo' where necessary."
+    fi
+}
+
+print_header() {
+cat << "EOF"
+
+        ██╗    ██████╗  ██████╗ ██████╗ ███╗   ██╗████████╗
+        ██║    ██╔══██╗██╔═══██╗██╔══██╗████╗  ██║╚══██╔══╝
+        ██║    ██████╔╝██║   ██║██████╔╝██╔██╗ ██║   ██║
+        ██║    ██╔══██╗██║   ██║██╔══██╗██║╚██╗██║   ██║
+   ██╗  ██║    ██║  ██║╚██████╔╝██║  ██║██║ ╚████║   ██║
+   ╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝
+           The Legendary Node.js Setup Script v5
+
+EOF
+}
+
+fix_ownership() {
+  step "Checking File Permissions"
+  info "Ensuring correct file ownership..."
+  sudo chown -R "$USER:$USER" "$WORKDIR"
+  log "Ownership confirmed."
+}
+
+update_system() {
+  step "Updating System"
+  info "Synchronizing package lists..."
+  sudo apt-get update -y &>/dev/null && sudo apt-get upgrade -y &>/dev/null
+  log "System packages are up-to-date."
+}
+
+install_node_if_needed() {
+  step "Verifying Node.js Environment"
+  if ! command -v node &>/dev/null; then
+    warn "Node.js not found. Installing..."
+    info "Installing required packages..."
+    sudo apt-get install -y build-essential python3 python3-pip curl &>/dev/null
+    info "Fetching Node.js v24.x..."
+    curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash - &>/dev/null
+    sudo apt-get install -y nodejs &>/dev/null
+    log "Installed Node.js $(node -v)."
+  else
+    log "Node.js is already installed: $(node -v)."
+  fi
+}
+
+manage_npm_dependencies() {
+  if [[ ! -f "package.json" ]]; then
+    warn "package.json not found. Skipping dependency management."
+    return
+  fi
+
+  step "Managing NPM Dependencies"
+  info "Installing analysis tools..."
+  sudo apt-get install -y jq &>/dev/null
+  sudo npm install -g depcheck &>/dev/null
+
+  info "Analyzing project dependencies..."
+  TMPJSON="$(mktemp)"
+  depcheck . --json >"$TMPJSON" 2>/dev/null || true
+
+  MISSING_PKGS=$(jq -r '.missing | keys | .[]' <"$TMPJSON" | tr '\n' ' ')
+  if [[ -n "$MISSING_PKGS" ]]; then
+    warn "Found missing packages."
+    info "Installing required dependencies..."
+    npm install $MISSING_PKGS --save
+    log "Missing dependencies installed."
+  else
+    log "All dependencies are correctly defined."
+  fi
+
+  EXCLUDES=("pino" "pino-daily-rotate-file" "pino-pretty")
+  UNUSED_PKGS_RAW=$(jq -r '.dependencies | .[]' <"$TMPJSON")
+  UNUSED_PKGS_TO_REMOVE=""
+  for pkg in $UNUSED_PKGS_RAW; do
+    if ! printf '%s\n' "${EXCLUDES[@]}" | grep -qx "$pkg"; then
+      UNUSED_PKGS_TO_REMOVE+="$pkg "
+    fi
+  done
+
+  if [[ -n "$UNUSED_PKGS_TO_REMOVE" ]]; then
+    warn "Found unused packages."
+    info "Removing unnecessary dependencies..."
+    npm uninstall $UNUSED_PKGS_TO_REMOVE
+    log "Unused dependencies removed."
+  else
+    log "No unused dependencies found."
+  fi
+}
+
+validate_token() {
+    local token="$1"
+    info "Validating token with Telegram API..."
+    local response
+    response=$(curl --connect-timeout 5 -s "https://api.telegram.org/bot${token}/getMe")
+    if [[ -z "$response" ]]; then
+        warn "Could not connect to Telegram API. Check network."
+        return 1
+    fi
+    if ! echo "$response" | jq -e '.ok == true' &>/dev/null; then
+        local error_msg
+        error_msg=$(echo "$response" | jq -r '.description' 2>/dev/null)
+        warn "Validation failed: ${error_msg:-Invalid token}"
+        return 1
+    fi
+    local bot_name
+    bot_name=$(echo "$response" | jq -r '.result.first_name')
+    log "Token is valid for bot: ${bot_name}"
+    return 0
+}
+
+# Generates a cryptographically secure alphanumeric string.
+generate_secret() {
+    head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32
+}
+
+configure_dotenv() {
+  step "Configuring Environment Secrets (.env)"
+  touch .env
+  
+  local BOT_TOKEN_INPUT=""
+  local VALIDATION_SECRET_INPUT=""
+
+  # Loop until a valid bot token is provided
+  while true; do
+    read -rp "  ${BOLD}▶ Enter your BOT_TOKEN:${NC} " BOT_TOKEN_INPUT
+    if validate_token "$BOT_TOKEN_INPUT"; then
+      break
+    else
+      warn "Please try again."
+    fi
+  done
+
+  # Loop until a valid validation secret is provided or generated
+  while true; do
+    read -rp "  ${BOLD}▶ Enter your VALIDATION_SECRET (alphanumeric, 16+ chars):${NC} " VALIDATION_SECRET_INPUT
+    
+    if [[ ${#VALIDATION_SECRET_INPUT} -lt 16 ]]; then
+        warn "Secret is too short. It must be at least 16 characters."
+    elif ! [[ "$VALIDATION_SECRET_INPUT" =~ ^[a-zA-Z0-9]+$ ]]; then
+        warn "Secret contains invalid characters. Use only letters (a-z, A-Z) and numbers (0-9)."
+    else
+        # Input is valid
+        break
+    fi
+    
+    # Offer to generate a secret if input was invalid
+    read -rp "  ${YELLOW}?${NC} Would you like me to generate a secure secret for you? [Y/n] " choice
+    if [[ "$choice" != "n" && "$choice" != "N" ]]; then
+        info "Generating a secure 32-character secret..."
+        VALIDATION_SECRET_INPUT=$(generate_secret)
+        log "Generated Secret: ${BOLD}${VALIDATION_SECRET_INPUT}${NC}"
+        break
+    fi
+  done
+
+  # Safely write to .env file
+  info "Writing secrets to .env file..."
+  {
+    grep -v "^BOT_TOKEN=" .env | grep -v "^VALIDATION_SECRET="
+    echo "BOT_TOKEN=${BOT_TOKEN_INPUT}"
+    echo "VALIDATION_SECRET=${VALIDATION_SECRET_INPUT}"
+  } > .env.tmp && mv .env.tmp .env
+  log "Secrets securely configured."
+}
+
+grant_node_permissions() {
+  step "Configuring Node.js Permissions"
+  local node_path
+  node_path=$(which node)
+  info "Granting port-binding capabilities..."
+  sudo setcap 'cap_net_bind_service=+ep' "$node_path"
+  log "Node.js permissions granted."
+}
+
+setup_pm2() {
+  step "Setting Up PM2 Process Manager"
+  if ! command -v pm2 &>/dev/null; then
+    info "Installing PM2 globally..."
+    sudo npm install -g pm2
+    log "PM2 installed."
+  else
+    log "PM2 is already installed."
+  fi
+
+  if [[ ! -f "bot.js" ]]; then
+      fail "Main application file 'bot.js' not found. Cannot start."
+  fi
+
+  info "Registering application with PM2..."
+  pm2 restart "${PM2_APP_NAME}" || pm2 start bot.js --name "${PM2_APP_NAME}"
+  pm2 save --force
+  log "Application start command sent."
+
+  info "Configuring PM2 to start on system boot..."
+  local startup_cmd
+  startup_cmd=$(pm2 startup systemd -u "$USER" --hp "$HOME" | grep 'sudo' || echo "")
+  
+  if [[ -z "$startup_cmd" ]]; then
+    warn "Could not determine PM2 startup command. You may need to run it manually."
+    return
+  fi
+
+  warn "To enable PM2 on boot, a command must be run with sudo."
+  echo -e "  ${BOLD}$startup_cmd${NC}"
+  read -rp "  ${YELLOW}?${NC} Execute this command now? [Y/n] " choice
+  if [[ "$choice" != "n" && "$choice" != "N" ]]; then
+    (eval "$startup_cmd")
+    log "PM2 startup configured."
+  else
+    warn "Skipping PM2 startup configuration."
+  fi
+}
+
+main() {
+    print_header
+    check_not_root
+    
+    # --- Setup Execution ---
+    fix_ownership
+    update_system
+    install_node_if_needed
+    manage_npm_dependencies
+    configure_dotenv
+    grant_node_permissions
+    setup_pm2
+
+    # --- Final Verification & Log Tailing ---
+    step "Finalizing and Verifying Application"
+    info "Allowing a moment for initialization..."
+    sleep 2
+
+    info "Checking application status..."
+    APP_STATUS=$(pm2 jlist | jq -r --arg name "$PM2_APP_NAME" '.[] | select(.name == $name) | .pm2_env.status' || echo "error")
+
+    if [[ "$APP_STATUS" == "online" ]]; then
+        echo -e "\n${GREEN}      ██████╗ ██╗   ██╗ ██████╗███████╗███████╗███████╗"
+        echo -e "      ██╔══██╗██║   ██║██╔════╝██╔════╝██╔════╝██╔════╝"
+        echo -e "      ██████╔╝██║   ██║██║     █████╗  █████╗  ███████╗"
+        echo -e "      ██╔══██╗██║   ██║██║     ██╔══╝  ██╔══╝  ╚════██║"
+        echo -e "      ██████╔╝╚██████╔╝╚██████╗███████╗███████╗███████║"
+        echo -e "      ╚═════╝  ╚═════╝  ╚═════╝╚══════╝╚══════╝╚══════╝${NC}\n"
+        log "Your application '${PM2_APP_NAME}' is online."
+        step "Tailing live logs... (Press Ctrl+C to stop)"
+        exec pm2 logs "${PM2_APP_NAME}" --raw
+    else
+        warn "Application '${PM2_APP_NAME}' is NOT online. Status: ${BOLD}${APP_STATUS:-Not Found}${NC}."
+        info "There is likely an error in your 'bot.js' file."
+        step "Displaying the last 100 lines of error logs:"
+        pm2 logs "${PM2_APP_NAME}" --lines 100 --nostream
+        fail "Application failed to start. Review the logs above to debug."
+    fi
+}
+
+# --- Execute Script ---
+main
