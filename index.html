@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Telegram Web App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Telegram Web Apps script -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    #greeting { font-size: 1.2rem; margin-bottom: 1rem; }
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      background: #0088cc;
+      color: white;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="greeting">Loading…</div>
+  <button id="sendBtn" style="display:none;">Send Reply</button>
+
+  <script type="module">
+    import { WebApp } from 'https://cdn.jsdelivr.net/npm/@grammyjs/web-app/+esm';
+
+    // Initialize and read injected data
+    WebApp.init();
+    const user = WebApp.initDataUnsafe.user;
+    const greetingEl = document.getElementById('greeting');
+    greetingEl.textContent = user
+      ? `Hello, ${user.first_name}!`
+      : 'Hello, Telegram user!';
+
+    // Configure Main Button
+    const sendBtn = document.getElementById('sendBtn');
+    sendBtn.style.display = 'block';
+    sendBtn.textContent = 'Send Reply';
+    sendBtn.onclick = () => {
+      // Sends data back to your bot as a Telegram event
+      WebApp.sendData(JSON.stringify({ repliedAt: Date.now() }));
+    };
+  </script>
+</body>
+</html>
